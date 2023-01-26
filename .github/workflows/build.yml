@@ -27,3 +27,7 @@ jobs:
           NOMBRE: ${{ secrets.NOMBRE }}
       - name: Enviar mensaje
         run : npm main.js 
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.CHAT_ID }}
+          NOMBRE: ${{ secrets.NOMBRE }}
