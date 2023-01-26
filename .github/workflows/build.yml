@@ -27,4 +27,3 @@ jobs:
           NOMBRE: ${{ secrets.NOMBRE }}
       - name: Enviar mensaje
         run : npm main.js
-        run: echo "Mensaje enviado"
