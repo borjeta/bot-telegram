@@ -1,0 +1,13 @@
+name: send_telegram_action
+
+on: [push]
+
+jobs:
+  envio_mensaje:
+    runs-on: ubuntu-latest
+   - name: Enviar mensaje
+        run : npm main.js 
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.CHAT_ID }}
+          NOMBRE: ${{ secrets.NOMBRE }}
