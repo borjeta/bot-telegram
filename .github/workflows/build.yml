@@ -22,7 +22,7 @@ jobs:
       - name: Instalar dependencias
         run: npm install && npm install node-telegram-bot-api
       - name: Ejecutar la action creada por nosotros mismos
-        uses: github/actions/send_telegram_action
+        uses: /actions/send_telegram_action
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
