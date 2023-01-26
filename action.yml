@@ -1,0 +1,20 @@
+#action.yml que llamara el workflow de build.yml
+name: 'Send Telegram Message'
+inputs:
+  telegram_token:
+    description: 'Telegram token'
+    required: true
+  telegram_chat_id:
+    description: 'Telegram chat id'
+    required: true
+  nombre:
+    description: 'Nombre'
+    required: true
+runs:
+  using: 'node12'
+  main: 'main.js'
+#Define las variables de entorno de los secrets de github
+env:
+  TELEGRAM_TOKEN: ${{ inputs.telegram_token }}
+  TELEGRAM_CHAT_ID: ${{ inputs.telegram_chat_id }}
+  NOMBRE: ${{ inputs.nombre }}
