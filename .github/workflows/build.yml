@@ -12,10 +12,33 @@
 #yml con el workflow con node 19 y que descargue el repositorio actions/checkout@v2
 name: send_telegram_workflow
 on: [push]
+jobs:name: send_telegram_workflow
+on:
+  push:
+    branches:
+      - send_telegram_action
 jobs:
-  
-
-
+  montamos_chiringuito:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener código
+        uses: actions/checkout@v2
+     
+  montamos_elotrochiringuito:
+    needs: montamos_chiringuito
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ejecutar la action
+        uses: ./.github/actions/send_telegram_action
+        with:
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          nombre: ${{ secrets.NOMBRE }}
+      - name: Respuesta
+        run: echo "Mensaje enviado"
+      - name: Respuesta
+        run: echo "Workflow ejecutado correctamente tras el último commit. Saludos NOMBRE"
+        
   envio_mensaje:
     runs-on: ubuntu-latest
     steps:
