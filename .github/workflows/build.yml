@@ -20,7 +20,6 @@ jobs:
       - name: Obtener el código del repositorio
         uses: actions/checkout@v2
       - name: Ejecutar la action creada por nosotros mismos
-        uses: ./
         run: npm main.js
         env:
           TELEGRAM_TOKEN: ${{ secrets.TOKEN }}
