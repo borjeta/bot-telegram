@@ -9,21 +9,25 @@
 #Uno encargado de obtener el código del repositorio actions/checkout@v2
 #nOtro encargado de ejecutar la action creada por nosotros mismos. Se le establecerán las variables de entorno comentadas anteriormente (como secrets de github para evitar mostrar datos comprometidos) así como el nombre de la persona que queramos que se muestre en el mensaje
 
+#yml con el workflow con node 19 y que descargue el repositorio actions/checkout@v2
 name: send_telegram_workflow
-
 on: [push]
-
 jobs:
+  
+
+
   envio_mensaje:
     runs-on: ubuntu-latest
     steps:
-      - name: Obtener el código del repositorio
-        uses: actions/checkout@v2
-      - name: Instalar dependencias
-        run: npm install -g npm@latest && npm install node-telegram-bot-api
-      - name: Ejecutar la action creada por nosotros mismos
+      - uses: actions/checkout@v2
+      - name: send_telegram_action
         uses: ./.github/actions/send_telegram_action
-        env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          NOMBRE: ${{ secrets.NOMBRE }}
+        with:
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+          nombre: ${{ secrets.NOMBRE }}
+      - name: Respuesta
+        run: echo "Mensaje enviado"
+      - name: Respuesta
+        run: echo "Workflow ejecutado correctamente tras el último commit. Saludos NOMBRE"
+      
