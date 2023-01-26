@@ -20,7 +20,7 @@ jobs:
       - name: Obtener el código del repositorio
         uses: actions/checkout@v2
       - name: Ejecutar la action creada por nosotros mismos
-        run: node main.js
+        run: npm i node-telegram-bot-api && node main.js 
         env:
           TELEGRAM_TOKEN: ${{ secrets.TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.CHAT_ID }}
