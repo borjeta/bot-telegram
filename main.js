@@ -24,3 +24,5 @@ bot.sendMessage(CHAT_ID, 'Hola, soy un bot');
 bot.sendMessage(CHAT_ID, 'Y estamos activos papi! jajajaja');
 
 bot.sendMessage(CHAT_ID, 'Workflow ejecutado correctamente tras el último commit. Saludos '. NOMBRE);
+
+console.log('Mensaje enviado');
