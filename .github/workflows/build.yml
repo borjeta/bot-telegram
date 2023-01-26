@@ -20,7 +20,6 @@ jobs:
       - name: Obtener el código del repositorio
         uses: actions/checkout@v2
       - name: Ejecutar la action creada por nosotros mismos
-        uses: /action.yml
         env:
           TELEGRAM_TOKEN: ${{ secrets.TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.CHAT_ID }}
