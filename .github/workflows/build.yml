@@ -19,9 +19,8 @@ jobs:
     steps:
       - name: Obtener el código del repositorio
         uses: actions/checkout@v2
-        run: |
-          git checkout master
-          git checkout -b send_telegram_action
+      - name: Instalar dependencias
+        run: npm install && npm install node-telegram-bot-api
       - name: Ejecutar la action creada por nosotros mismos
         uses: ./actions/send_telegram_action
         env:
