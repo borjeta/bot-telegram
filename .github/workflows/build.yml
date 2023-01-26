@@ -20,7 +20,7 @@ jobs:
       - name: Obtener el código del repositorio
         uses: actions/checkout@v2
       - name: Cargamos las variables de entorno
-        uses: ./action.yml
+      - uses: lowlighter/metrics@latest
         with:
           TOKEN: ${{ secrets.TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
