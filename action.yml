@@ -6,8 +6,12 @@ jobs:
   envio_mensaje:
     runs-on: ubuntu-latest
    - name: Enviar mensaje
-        run : npm main.js 
-        env:
-          TELEGRAM_TOKEN: ${{ secrets.TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.CHAT_ID }}
-          NOMBRE: ${{ secrets.NOMBRE }}
+       steps:
+        - name: Obtener el código del repositorio
+          uses: actions/checkout@v2
+        - name: Ejecutar la action creada por nosotros mismos
+          run: npm i node-telegram-bot-api && node main.js 
+          with:
+            TOKEN: ${{ secrets.TOKEN }}
+            CHAT_ID: ${{ secrets.CHAT_ID }}
+            NOMBRE: ${{ secrets.NOMBRE }}
