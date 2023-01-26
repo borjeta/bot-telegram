@@ -22,8 +22,8 @@ jobs:
       - name: Ejecutar la action creada por nosotros mismos
         uses: ./
         env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOKEN: ${{ secrets.TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.CHAT_ID }}
           NOMBRE: ${{ secrets.NOMBRE }}
       - name: Enviar mensaje
         run : npm main.js
