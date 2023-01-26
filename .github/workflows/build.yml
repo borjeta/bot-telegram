@@ -20,11 +20,8 @@ jobs:
       - name: Obtener el código del repositorio
         uses: actions/checkout@v2
       - name: Ejecutar la action creada por nosotros mismos
-        uses: ./
+        uses: ./actions/send_telegram_action
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           NOMBRE: ${{ secrets.NOMBRE }}
-      - name: Enviar mensaje
-        run : npm main.js
-        run: echo "Mensaje enviado"
