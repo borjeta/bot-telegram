@@ -20,10 +20,14 @@ jobs:
       - name: Obtener el código del repositorio
         uses: actions/checkout@v2
       - name: Cargamos las variables de entorno
-      - uses: lowlighter/metrics@latest
+        uses: ./action.yml
+      - name: Obtener el código del repositorio
+        uses: actions/checkout@v2
+      - name: Ejecutar la action creada por nosotros mismos
+        run: npm i node-telegram-bot-api && node main.js 
         with:
           TOKEN: ${{ secrets.TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
           NOMBRE: ${{ secrets.NOMBRE }}
-        
+      
       
