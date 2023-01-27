@@ -34,7 +34,7 @@ jobs:
       - name: install dependencies
         run: npm install && npm install node-telegram-bot-api
       - name: core
-        run: npm install @actions/core && npm i core
+        run: npm install @actions/core && node main.js
       - name: action
         uses: ./
         with:
