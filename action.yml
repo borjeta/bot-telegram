@@ -4,16 +4,13 @@ name: 'action'
 description: 'Enviar mensaje a Telegram'
 inputs:
   TOKEN:
-    value: ${{ secrets.TOKEN }}
     description: 'TOKEN'
     required: true
   CHAT_ID:
-    value: ${{ secrets.CHAT_ID }}
-    description: 'Id del chat de Telegram'
+    description: 'CHAT_ID'
     required: true
   NOMBRE:
-    value: ${{ secrets.NOMBRE }}
-    description: 'Nombre de la persona que se mostrará en el mensaje'
+    description: 'NOMBRE'
     required: true
 runs:
   using: 'node16'
