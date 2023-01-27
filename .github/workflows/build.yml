@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ejecutar la action
-        uses: ./../.github/actions/send_telegram_action
+        uses: ./../.github/actions/
         with:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
