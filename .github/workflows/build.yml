@@ -42,7 +42,7 @@ jobs:
           CHAT_ID: ${{ secrets.TELEGRAM_TOKEN.CHAT_ID }}
           NOMBRE: ${{ secrets.TELEGRAM_TOKEN.NOMBRE }}
       - name : Arranca bot
-         run : node main.js
+        run : node main.js
       - name: Respuesta
         run: echo "Mensaje enviado"
       - name: Respuesta
