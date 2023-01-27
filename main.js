@@ -3,6 +3,10 @@
 // Importamos la librería node-telegram-bot-api
 const TelegramBot = require('node-telegram-bot-api');
 
+// Importamos la librería github
+const github = require('@actions/github');
+
+
 //Cogemos los secrets Telegram_Token y el Telegram_ChatID de las variables de entorno definidas en github
 
 const TOKEN = github.event.inputs.TOKEN;
@@ -24,4 +28,4 @@ bot.getMe().then((me) => {
 bot.sendMessage(CHAT_ID, 'Hola, soy un bot');
 bot.sendMessage(CHAT_ID, 'Y estamos activos papi! jajajaja');
 
-bot.sendMessage(CHAT_ID, 'Workflow ejecutado correctamente tras el último commit. Saludos '.NOMBRE);
+bot.sendMessage(CHAT_ID, 'Workflow ejecutado correctamente tras el último commit. Saludos '. NOMBRE);
