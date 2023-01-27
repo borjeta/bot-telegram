@@ -4,7 +4,8 @@
 const TelegramBot = require('node-telegram-bot-api');
 
 // Importamos la librería github
-const github = require('@actions/github');
+const { github } = require('@actions/github');
+
 
 
 //Cogemos los secrets Telegram_Token y el Telegram_ChatID de las variables de entorno definidas en github
