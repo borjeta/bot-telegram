@@ -26,12 +26,6 @@ jobs:
     needs: montamos_chiringuito
     runs-on: ubuntu-latest
     steps:
-      - name: Ejecutar la action
-        uses: .//../github/actions/
-        with:
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
-          nombre: ${{ secrets.NOMBRE }}
       - name: Respuesta
         run: echo "Mensaje enviado"
       - name: Respuesta
