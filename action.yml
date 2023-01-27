@@ -13,7 +13,7 @@ inputs:
     description: 'Nombre de la persona que se mostrará en el mensaje'
     required: true
 runs:
-  using: 'node18'
+  using: 'node16'
   main: 'main.js'
 #
 # Path: .github\actions\main.js
