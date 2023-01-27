@@ -10,9 +10,8 @@
 #nOtro encargado de ejecutar la action creada por nosotros mismos. Se le establecerán las variables de entorno comentadas anteriormente (como secrets de github para evitar mostrar datos comprometidos) así como el nombre de la persona que queramos que se muestre en el mensaje
 
 #yml con el workflow con node 19 y que descargue el repositorio actions/checkout@v2
+
 name: send_telegram_workflow
-on: [push]
-jobs:name: send_telegram_workflow
 on:
   push:
     branches:
