@@ -5,8 +5,8 @@ const TelegramBot = require('node-telegram-bot-api');
 
 //Cogemos los secrets Telegram_Token y el Telegram_ChatID de las variables de entorno definidas en github
 
-const TOKEN = process.env.secrets.TELEGRAM_TOKEN;
-const CHAT_ID = process.env.secrets.TELEGRAM_CHAT_ID;
+const TOKEN = process.env.secrets.TOKEN;
+const CHAT_ID = process.env.secrets.CHAT_ID;
 
 // Creamos un bot que utiliza 'polling' para obtener actualizaciones
 const bot = new TelegramBot(TOKEN, { polling: true });
