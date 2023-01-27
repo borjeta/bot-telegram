@@ -38,9 +38,9 @@ jobs:
       - name: action
         uses: ./
         with:
-          TOKEN: ${{ secrets.TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
-          NOMBRE: ${{ secrets.NOMBRE }}
+          TOKEN: ${{ secrets.TELEGRAM_TOKEN.TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_TOKEN.CHAT_ID }}
+          NOMBRE: ${{ secrets.TELEGRAM_TOKEN.NOMBRE }}
       - name: Respuesta
         run: echo "Mensaje enviado"
       - name: Respuesta
