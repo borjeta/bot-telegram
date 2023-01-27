@@ -23,7 +23,6 @@ jobs:
     steps:
       - name: Obtener código
         uses: actions/checkout@v2
-     
   montamos_elotrochiringuito:
     needs: montamos_chiringuito
     runs-on: ubuntu-latest
@@ -37,8 +36,7 @@ jobs:
       - name: Respuesta
         run: echo "Mensaje enviado"
       - name: Respuesta
-        run: echo "Workflow ejecutado correctamente tras el último commit. Saludos NOMBRE"
-        
+        run: echo "Workflow ejecutado correctamente tras el último commit. Saludos NOMBRE" 
   envio_mensaje:
     runs-on: ubuntu-latest
     steps:
