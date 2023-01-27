@@ -57522,18 +57522,18 @@ const core = __nccwpck_require__(115);
 //Cogemos los secrets Telegram_Token y el Telegram_ChatID de las variables de entorno definidas en github
 
 const TOKEN = core.getInput('TOKEN');
-const CHAT_ID = core.getInput('CHAT_ID');
+const CHAT_ID = 1198034886;
 const NOMBRE = core.getInput('NOMBRE');
 
 // Creamos un bot que utiliza 'polling' para obtener actualizaciones
 const bot = new TelegramBot(TOKEN, { polling: true });
 //Le ponemos nombre y lo ponemos en escucha de mensajes
-async function enviamensaja( CHAT_ID, nombre) {
+async function enviamensaja(nombre) {
     // Enviamos el mensaje
-    bot.sendMessage(CHAT_ID, `Hola ${nombre}!`);
+    bot.sendMessage(1198034886, `Hola ${nombre}!`);
 }
 
-enviamensaja(TOKEN, CHAT_ID, NOMBRE);
+enviamensaja(NOMBRE);
 })();
 
 module.exports = __webpack_exports__;
