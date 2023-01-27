@@ -27,7 +27,13 @@ jobs:
     needs: montamos_chiringuito
     steps:
       - uses: actions/checkout@v2
-      - name: send_telegram_action
+      - name: install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '19'
+      - name: install dependencies
+        run: npm install && npm install node-telegram-bot-api
+      - name: action
         uses: .//../.github/actions/
         with:
           token: ${{ secrets.TELEGRAM_TOKEN }}

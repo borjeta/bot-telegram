@@ -1,18 +1,20 @@
-#action.yml que se ejecutará despues del build.yml
-name: 'send_telegram_action'
+#action.yml que se ejecutará despues del build.yml y que levantará 
+#un servidor web en el puerto 3000 que ejecutará el main.js
+name: 'action'
 description: 'Enviar mensaje a Telegram'
 inputs:
-  token:
+  TOKEN:
     description: 'Token de Telegram'
     required: true
-  chat_id:
+  CHAT_ID:
     description: 'Id del chat de Telegram'
     required: true
-  nombre:
+  NOMBRE:
     description: 'Nombre de la persona que se mostrará en el mensaje'
     required: true
 runs:
   using: 'node12'
   main: 'main.js'
-  
+#
+# Path: .github\actions\main.js
   
