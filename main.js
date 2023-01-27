@@ -23,9 +23,6 @@ const bot = new TelegramBot(TOKEN, { polling: true });
 
 console.log('Bot server started in the port 3000');
 console.log('Bot name: ' + bot.name);
-bot.getMe().then((me) => {
-   bot.sendMessage(CHAT_ID, 'Hola, soy ' + me.first_name + ' y estoy activo');
-});
 
 bot.sendMessage(CHAT_ID, 'Hola, soy un bot');
 bot.sendMessage(CHAT_ID, 'Y estamos activos papi! jajajaja');
