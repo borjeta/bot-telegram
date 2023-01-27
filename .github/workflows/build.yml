@@ -21,9 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Obtener código
-        uses: actions/checkout@v2
-  montamos_elotrochiringuito:
-    
+        uses: actions/checkout@v2    
   envio_mensaje:
     runs-on: ubuntu-latest
     needs: montamos_chiringuito
