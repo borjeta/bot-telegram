@@ -15,7 +15,7 @@ name: send_telegram_workflow
 on:
   push:
     branches:
-      - send_telegram_action
+      - send_telegram
 jobs:
   montamos_chiringuito:
     runs-on: ubuntu-latest
