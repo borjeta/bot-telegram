@@ -15,13 +15,9 @@ const NOMBRE = core.getInput('NOMBRE');
 // Creamos un bot que utiliza 'polling' para obtener actualizaciones
 const bot = new TelegramBot(TOKEN, { polling: true });
 //Le ponemos nombre y lo ponemos en escucha de mensajes
+async function enviamensaja(token , chatid, nombre) {
+    // Enviamos el mensaje
+    bot.sendMessage(CHAT_ID, `Hola ${nombre}!`);
+}
 
-
-
-console.log('Bot server started in the port 3000');
-console.log('Bot name: ' + bot.name);
-
-bot.sendMessage(CHAT_ID, 'Hola, soy un bot');
-bot.sendMessage(CHAT_ID, 'Y estamos activos papi! jajajaja');
-
-bot.sendMessage(CHAT_ID, 'Workflow ejecutado correctamente tras el último commit. Saludos ' + NOMBRE);
+enviamensaja(TOKEN, CHAT_ID, NOMBRE);
