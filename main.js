@@ -11,7 +11,7 @@ const core = require('@actions/core');
 
 //Cogemos los secrets Telegram_Token y el Telegram_ChatID de las variables de entorno definidas en github
 
-const TOKEN = core.getVar('TOKEN');
+const TOKEN = core.getInput('TOKEN');
 const CHAT_ID = core.getInput('CHAT_ID');
 const NOMBRE = core.getInput('NOMBRE');
 
