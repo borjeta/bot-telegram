@@ -5,6 +5,7 @@ const TelegramBot = require('node-telegram-bot-api');
 
 // hacemos las peticiones para obtener los tokens de github
 const core = require('@actions/core');
+const { exit } = require('process');
 
 //Cogemos los secrets Telegram_Token y el Telegram_ChatID de las variables de entorno definidas en github
 
@@ -17,7 +18,9 @@ const bot = new TelegramBot(TOKEN, { polling: true });
 //Le ponemos nombre y lo ponemos en escucha de mensajes
 async function enviamensaja(nombre) {
     // Enviamos el mensaje
-    bot.sendMessage(1198034886, `Hola ${nombre}!`);
+    await bot.sendMessage(1198034886, `Hola ${nombre}!`);
+    await bot.stopPolling();
+    await process.exit(0);
 }
 
 enviamensaja(NOMBRE);
