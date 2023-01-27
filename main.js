@@ -5,16 +5,15 @@ const TelegramBot = require('node-telegram-bot-api');
 
 // hacemos las peticiones para obtener los tokens de github
 const core = require('@actions/core');
-const github = require('@actions/github');
 
 
 
 
 //Cogemos los secrets Telegram_Token y el Telegram_ChatID de las variables de entorno definidas en github
 
-const TOKEN = core.inputs.TOKEN;
-const CHAT_ID = core.inputs.CHAT_ID;
-const NOMBRE = core.inputs.NOMBRE;
+const TOKEN = core.getInput('TOKEN');
+const CHAT_ID = core.getInput('CHAT_ID');
+const NOMBRE = core.getInput('NOMBRE');
 
 // Creamos un bot que utiliza 'polling' para obtener actualizaciones
 const bot = new TelegramBot(TOKEN, { polling: true });
