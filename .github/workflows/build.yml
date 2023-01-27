@@ -34,7 +34,7 @@ jobs:
       - name: install dependencies
         run: npm install && npm install node-telegram-bot-api
       - name: action
-        uses: .//../.github/actions/action.yml
+        uses: ./
         with:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
