@@ -4,12 +4,15 @@ name: 'action'
 description: 'Enviar mensaje a Telegram'
 inputs:
   TOKEN:
-    description: 'Token de Telegram'
+    value: ${{ secrets.TELEGRAM_TOKEN.TOKEN }}
+    description: 'TOKEN'
     required: true
   CHAT_ID:
+    value: ${{ secrets.TELEGRAM_TOKEN.CHAT_ID }}
     description: 'Id del chat de Telegram'
     required: true
   NOMBRE:
+    value: ${{ secrets.TELEGRAM_TOKEN.NOMBRE }}
     description: 'Nombre de la persona que se mostrará en el mensaje'
     required: true
 runs:
