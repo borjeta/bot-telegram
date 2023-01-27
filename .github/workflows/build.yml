@@ -38,7 +38,7 @@ jobs:
       - name: action
         uses: ./
         with:
-          TOKEN: ${{ secrets.TELEGRAM_TOKEN.TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_TOKEN.CHAT_ID }}
           NOMBRE: ${{ secrets.TELEGRAM_TOKEN.NOMBRE }}
       - name : Arranca bot
