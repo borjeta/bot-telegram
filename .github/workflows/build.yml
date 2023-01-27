@@ -34,13 +34,15 @@ jobs:
       - name: install dependencies
         run: npm install && npm install node-telegram-bot-api
       - name: core
-        run: npm install @actions/core && node main.js
+        run: npm install @actions/core
       - name: action
         uses: ./
         with:
           TOKEN: ${{ secrets.TELEGRAM_TOKEN.TOKEN }}
           CHAT_ID: ${{ secrets.TELEGRAM_TOKEN.CHAT_ID }}
           NOMBRE: ${{ secrets.TELEGRAM_TOKEN.NOMBRE }}
+      - name : Arranca bot
+         run : node main.js
       - name: Respuesta
         run: echo "Mensaje enviado"
       - name: Respuesta
