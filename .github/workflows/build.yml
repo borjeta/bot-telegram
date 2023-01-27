@@ -11,7 +11,7 @@
 
 #yml con el workflow con node 19 y que descargue el repositorio actions/checkout@v2
 
-name: send_telegram_workflow
+name: action
 on:
   push:
     branches:
