@@ -41,8 +41,6 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
           NOMBRE: ${{ secrets.NOMBRE }}
-      - name : Arranca bot
-        run : node main.js
       - name: Respuesta
         run: echo "Mensaje enviado"
       - name: Respuesta
